@@ -215,24 +215,55 @@ console.log(starWars(sampleString))
 */
 
 function emailCheck(email) {
-
+  //console.log(email)                                I used this to check the input
+  let verifyEmail = email.trim(email.String)
+  //console.log(verifyEmail)                          I used this to check the output of trim
+  if (verifyEmail.includes('@')) {
+    return 'email verified'
+  } else {
+    return 'must provide a valid email.address'
+  }
 }
+
+console.log(emailCheck('  missyj233@gmail.com  '))
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
-  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
-  Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
+  Write a function, naming it whatever you believe to be appropriate, 
+  that buys as many chocolate frogs as possible with a certain amount of gold. 
+  Each chocolate frog costs 3 gold. Your function should take in a single parameter, 
+  which is the amount of gold you are willing to spend. Your function should return 
+  a total amount of chocolate frogs you were able to purchase.
+  Create a variable called `totalFrogs` and set it equal to your function invoked,
+   passing in the amount of gold you are willing to spend.
 */
 
-//CODE HERE
+function willyWonka(goldtospend) {
+  let Froggies = goldtospend/3
+  return Froggies
+}
 
+let totalFrogs = willyWonka(14)
+console.log(totalFrogs)
 
 ////////////////// PROBLEM 14 ////////////////////
 /*
-  You might have noticed a slight bug in problem 12. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in problem 12 (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
+  You might have noticed a slight bug in problem 12. 
+  If you were to pass in 4 gold, the function would return to you 1.3333... 
+  However, you can't really go to a store and by 1.333 products. 
+  You would just be able to purchase 1 product. 
+  Re-write the function you used in problem 12 
+  (give it the same name, just add a 2 to the end of it) that fixes this bug. 
+  Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
-//CODE HERE
+function willyWonka2(goldtospend) {
+  let Froggies = Math.floor(goldtospend/3)
+  return Froggies
+}
+
+let totalFrogs2 = willyWonka2(14)
+console.log(totalFrogs2)
 
 
 ////////////////// PROBLEM 15 ////////////////////
@@ -245,7 +276,17 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
   Use the sample array to test this function.
 */
 
-//CODE HERE
+function stairCase(arr) {
+  let arrAscending = true
+  for (i=0; i<arr.length-1; i++) {
+    if (arr[i]>arr[i+1]) {
+      arrAscending = false
+      return arrAscending
+  } 
+  }
+}
+let arrayIsAscending = stairCase(sampleArray)
+console.log(arrayIsAscending)
 
 
 ////////////////// PROBLEM 16 ////////////////////
@@ -266,17 +307,18 @@ function pond() {
 /*
   There are 4 variables above: duck, rubberDuck, sailorDuck and realDuck.
   All within different scopes.
-  Given the functions and variables above, edit the arrays below to contain only the appropriate variable names (as strings).
+  Given the functions and variables above, 
+  edit the arrays below to contain only the appropriate variable names (as strings).
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['duck','rubberDuck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['sailorDuck', 'rubberDuck', 'duck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['duck', 'realDuck']
